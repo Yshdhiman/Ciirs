@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/1e3c9b134c.js" crossorigin="anonymous"></script>
+
+    <style>
+        
+        * {
+           box-sizing: border-box;
+           margin:0;
+           padding:0;
+        }
+
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        #header {
+            display: flex;
+            background-color: white;
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid rgba(20, 53, 93, 0.2);
+        }
+        #show {
+            font-size: 30px;
+            position: absolute;
+            right: 30px;
+            top:20px;
+            display: none;
+        }
+        #show a {
+            text-decoration: none;
+            color:#f5821f;
+        }
+        #header #ciirs img {
+            width: 110px;
+            height: 70px;
+            margin: 6px 0 0 8vw;
+        }
+        #topnav {
+            overflow: hidden;
+            display: flex;
+            margin: 8px 0 10px 15vw;
+            align-items: center;
+        }
+        #topnav a{
+            text-decoration: none;
+            color: #14355d  ;
+            margin: 8px 1vw;
+            padding-bottom: 8px;
+            letter-spacing: 0.5px;
+            font-size: 1.2vw;
+            text-align: center;
+            transition: 0.4s;
+            outline: none;
+            border-bottom: 4px solid white;
+            font-weight: bold;
+            white-space:nowrap;
+        }
+        #topnav a.active2 {
+            color: white;
+            background-color: #f5821f;
+            padding:12px 30px;
+            border-radius: 8px;
+            margin-left: 20px;
+        }
+        #topnav a.active1 {
+            border-bottom: 4px solid #f5821f;
+        } 
+
+        #topnav a:hover:not(.active2) {
+            color: #f5821f;
+            border-bottom: 4px solid #f5821f;
+        }
+
+        /* img part after header */
+        #background {
+            background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("wallpaperflare.jpg");
+            width:100%;
+            height: auto;
+            background-repeat: no-repeat;
+            background-attachment: absolute;
+            background-size:cover;
+            background-position: right center;
+            letter-spacing:1px;
+        }
+        #imgbody div{
+            display: flex;
+            justify-content: center;
+            margin-right: 450px;
+        }
+        #heading h3 {
+            margin-top: 30px;
+            font-size: 35px;
+            color:white;
+            margin-bottom: -10px;
+        }
+        #imgbody h1 {
+            font-size: 70px;
+            color:#ff902f
+        }
+        #imgbody h5 {
+            font-size: 18px;
+            margin: 0 10px 0 20px;
+            text-align: center;
+            color: white;
+        }
+        #btn a {
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+            background-color: #f5821f;
+            padding:12px 30px;
+            border-radius: 5px;
+            margin: 40px 0;
+        }
+
+        /* container 1 part about company */
+        #container1 {
+            background-color: #14355d;
+            color: white;
+            text-align: justify;
+        }
+        #container1 h1 {color:white; margin-bottom:-20px}
+        #container1 p {text-align: justify;font-size: 20px;}
+        #container1_col{
+            padding: 40px 80px;
+        }
+        #col div {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+        #col h1:not(.aboutUs) {
+            margin-top:20px;
+        }
+        #border1 {
+            padding:0 28px;
+            border-top: 4px solid #f5821f;
+        }
+        #border2 {
+            padding:0 5px;
+            border-top: 4px solid rgba(212, 185, 185, 0.712);
+            margin-left:6px;
+        }
+
+        /* container 2 part about services */
+        #container2 {
+            background-color:white; 
+            padding: 60px 0;             
+            color: #14355d;
+            letter-spacing: 0.5px;
+            font-size: 20px;
+        }
+        #container2 h1, h3 {text-align: center;}
+        #container2 h1 {margin-bottom: 20px;}
+        #container2 div {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        #container2_row {margin-top: 40px;}
+        #container2_row #row {
+            width: 29%;
+            padding: 30px;
+            margin: 25px;
+            background-color: #f9f9f9;
+            box-shadow: 3px 2px 10px rgb(206, 198, 198);
+            border-radius: 2px 70px;
+            transition: 0.2s;
+        }
+        #row h3 {padding: 18px;}
+        #container2_row #row p {
+            color:rgba(20, 53, 93, .8);
+            text-align:justify;
+            
+        }
+        #row a {
+            color:#f5821f;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 25px 0 10px 0px;
+        }
+        #container2_row #row:hover {
+            box-shadow: 4.5px 2.5px 10px rgb(179, 170, 170);
+        }
+        #container2_row #row i {
+            font-size: 50px;
+            display: block;
+            color:#f5821f;
+            width:100%;
+            text-align: center;
+        }
+
+        /* Container 3 why ciirs ? */
+        #container3 {
+            background-color: rgba(0, 0, 0, 0.74);
+            background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0.3));
+            height: 100%;
+            color:white;
+            width: 100%; 
+            padding-bottom:50px ;
+        }
+        #container3_row {margin: 0px 6vw 0; padding-top: 40px}
+        #container3_row div{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            text-align: left;
+        }
+        #container3_row h1, h2 {color:#f5821f;margin:1.5vw;}
+        #container3_row #row {
+            width:45%;
+            display: inline-block;
+            margin: 0 0 0 3vw; 
+            transition: 0.2s;
+        }
+        .dot {
+            border: 3px solid rgb(255, 255, 255);
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            float: left;
+            margin:10px 20px 25% 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #container3_row h4 {
+            margin: 30px 0 40px 0;
+            font-size: 16px;
+            text-align: center;
+        }
+        #container3_row p {font-size: 18px;text-align: justify;}
+        #container3_row #row i {
+            font-size: 35px;
+            text-align: center;
+        }
+        #container3_row #row:hover {
+            scale: 1.05;
+        }
+        #container3_row #row:hover i {color: #f5821f;}
+        #container3_row #row:hover .dot {
+            background-color: white;
+        }
+        /* conatiner 4 working approach */
+        #container4 { background-color: rgba(243, 238, 238, 0.514)}
+        #container4 div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:#14355d
+        }
+        #container4 h1 {margin:40px 0 20px 0;}
+        #container4_row img {
+            margin-top: 20px;
+            height: 120vh;
+            width: 100%;
+        }
+
+        /* conatiner 5 company experience*/
+        #container5 {
+            background-image:linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("pexels3.jpg");
+            width:100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-attachment: absolute;
+            background-size:cover;
+            background-position: right center;
+        }
+        #container5_row {
+            display: flex;
+            justify-content: center;
+            padding: 30px 6vw 30px 6vw;
+        }
+        #container5_row div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #container5 .circle {
+            border: 2px solid #ddd;
+            border-radius: 50%;
+            width: 17vw;
+            height: 30vh;
+            margin: 40px 20px;
+            text-align: center;
+        }
+        #container5_row h1 {color:#f5821f;}
+        #container5_row p {
+            color:white;
+            padding: 15px;
+            margin-top: -15px;
+        }
+
+        /* container 6 Prices */
+        #container6 {margin: 30px 0 60px 0}
+        #container6_row, h1, p{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 40px;
+        }
+        #container6 p {font-size: 19px;}
+        #container6 .border {
+            display: flex;
+            justify-content: center;
+        }
+        h1 {color:#14355d; padding:10px;}
+        #container6 p {margin:30px 60px; text-align: center;}
+        #layer1 h1, #layer2 h1, #layer3 h1 {color:white;}
+         #layer1, #layer2, #layer3{
+            border-radius: 10px 10px 0px 0;
+            padding: 20px 0;
+        }
+        #layer1 {
+            background-color:#8dca39;
+            padding: 20px 40px;
+        }
+        #layer2 {
+            background-color: #ec9917;
+            padding: 20px 70px;
+        }
+        #layer3 {background-color: #df1138;}
+        .lower_layer {
+            color:white;
+            background-color: #505050;
+            padding: 15px 0 15px 0;
+            border-radius: 0 0 10px 10px;
+        }
+        .center_layer {
+            padding:20px 0 30px 0;
+            background-color: #f7f7f7;
+            color:#337ab7;
+            font-size: 20px;
+        }
+        /* Container 7 Footer */
+        #container7 {
+            background-color: #0a0a0a;
+            color:white;
+            font-size: 19px;
+        }
+        #container7 h3 {color:#f5821f;}
+        #container7_row {
+            display: flex;
+            text-align: left;
+            white-space: nowrap;
+        }
+        #container7_row .box {
+            margin:40px 7vw 40px 7vw;
+        }
+        .box img {width:120px;}
+        .box span {display: flex; padding: 1vw}
+        .box #joinUs {display: flex; margin:0 0 20px 5px;}
+        #fb, #gmail, #in {
+            color: white;
+            background-color:#3b5998;
+            padding:0.5vw 1vw;
+            border-radius: 4px;
+            margin:5px;
+        }
+        #gmail {background-color: #c71610;}
+        #in {background-color: #0072b1 ;}
+        #contactlink a {
+            text-decoration: none;
+            color:#f5821f;
+        }
+        #copyright {
+            text-align: center;
+            border-top: 0.5px solid #8a868667;
+            padding: 5px;
+            color: rgba(175, 166, 166, 0.541);
+            font-size: 15px;
+        }
+        
+        /* Responsive */
+        @media only screen and (max-width: 500px) {
+            #container3 #container3_row #row {
+                margin: 0 20px 12px 0;
+            }
+            #container3 {padding: 0}
+        }
+        @media only screen and (max-width: 700px) {
+            #container3_row {
+                display: grid;
+                grid-template-columns: auto;
+            }
+            #container3_row #row {
+                width: 100%;
+                margin: 0 20px -25px 0;
+                font-size: 14px;
+            }
+            #container3_row #row p {font-size: 14px;}
+            #imgbody h1 {font-size: 40px;}
+            #imgbody h3 {font-size: 30px;}
+        }
+        @media only screen and (max-width: 800px) {
+            #container6_row #box1, #box2, #box3 {
+                grid-column-start: 1;
+                grid-column-end: 3;
+                font-size: 3vw;
+            }
+            #container6 #container6_row .center_layer {font-size: 4.3vw;}
+            #container5 #container5_row .circle {
+                width: 33vw;
+                height: 33vh;
+            }
+            #container2 #container2_row #row{
+                width: 80%;
+            }
+            #container1_col{
+                padding: 40px 2.5vw;
+            }
+        }
+        @media only screen and (max-width: 940px) {
+            #container7_row {
+                display: flex;
+                flex-direction: column;
+            }
+            #container6_row {
+                display:grid;
+                grid-template-columns: auto auto;
+            }
+            #container6_row #box3{
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+            #container5_row {
+                display: grid;
+                grid-template-columns: auto auto;
+            }
+            #container5_row .circle {
+                width: 30vw;
+                height: 33vh;
+            }
+            #container4_row img {
+                height: 90vh;
+            }
+            #background {
+                background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("wallpaperflare.jpg");
+            }
+        }
+        @media only screen and (max-width: 1030px) {
+            #header #topnav {
+                display: none;
+                position: absolute;
+                top: 60px;
+                right:0;
+            }
+            #topnav a:not(.active2) {
+                text-align: left;
+                background-color: #14355d;
+                padding:12px 90px 12px 20px;
+                color: rgba(255,255,255);
+                font-size: 20px;
+                margin:0;
+            }
+            #header #topnav a.active2 {
+                color: rgba(255,255,255);
+                font-size: 20px;
+                border: none;
+            }
+            #show {display: block;}
+        }
+        @media only screen and (max-width: 1070px) {
+            #topnav {
+                overflow: hidden;
+                display: flex;
+                margin: 8px 0 10px 90px;
+                align-items: center;
+            }
+        }
+        @media only screen and (max-width: 1150px) {
+            #container6_row {font-size: 10.5px;}
+            #container6_row .center_layer {font-size: 17.5px;}
+            #container6_row #layer3 {padding: 20px 30px}
+            #header {position: relative;}
+        }
+        @media only screen and (max-width: 1180px) {
+            #header {position: relative;}
+            #container2_row #row{
+                width: 43%;
+            }
+            #imgbody div{
+                display: flex;
+                justify-content: center;
+                margin-right: 0;
+            }
+            #topnav a {font-size: 14px ;}
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div id="header">
+        <div id="ciirs"><img src="ciirslogo.png" alt="Ciirs Img"></div>
+        <div id="topnav">
+            <a href="#home" class="active1">Home</a>
+            <a href="#aboutUs">About Us</a>
+            <a href="#ourService">Our Services</a>
+            <a href="#whyCiirs">Why Ciirs</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#register">Register</a>
+            <a href="callUS" class="active2">Call Us</a>
+        </div>
+        <div id="show"><a href="#" id="btn2" class="fa-solid fa-bars"></a></div>
+    </div>
+    <script>
+        const nav = document.getElementById("topnav");
+        const btn = document.getElementById("btn2");
+        btn.onclick = function(){ 
+            if(nav.style.display !== "none"){
+                document.getElementById("topnav").style.display = "none";
+            } else {
+                document.getElementById("topnav").style.display = "grid";
+            }
+        }
+    </script>
+    <div id="background">
+        <div id="imgbody">
+            <div id="heading" class="heading"><h3>One Stop Company for All</h3></div>
+            <div><h1>WEB SOLUTIONS</h1></div>
+            <div><h5>Delivering Responsive Web Designs, Website Development and Mobile Apps Since 2019. Our Network Of 1000+ Happy Clients Is Broadening In Over 20+ Countries. Let us Convert Your Idea Into Reality.</h5></div>
+            <div id="btn"><a href="#">Get Free Consultation</a></div>
+        </div>
+    </div>
+
+    <div id="container1">
+        <div id="container1_col">
+            <div id="col">
+                <div><h1 class="aboutUs">About Us</h1></div>
+                <div><span id="border1"></span><span id="border2"></span></div>
+                <div><p>CIIRS is a team of professionals, who converts amazing creativity into existence. Since 2019, we have delivered numerous projects to our customers all around the world and helped them to grow their businesses through our hard work and creativity. Our experienced team of designers, developers, and search engine optimizers would love to provide you with the latest solutions available in the fields of website development and SEO.</p></div>
+            </div>
+            <div id="col">
+                <div><h1>Our Mission</h1></div>
+                <div><span id="border1"></span><span id="border2"></span></div>
+                <div><p>Our mission is to offer ideas that encourage organic traffic, through a cutting-edge design and developing futuristic features in your website. All this is possible with the help of our high-quality designing, developing, and SEO services.</p></div>
+            </div>
+            <div id="col">
+                <div><h1>Our Vision</h1></div>
+                <div><span id="border1"></span><span id="border2"></span></div>
+                <div><p>Our plan to boost your business and help it to touch new heights of marketing with the best alternatives in Web Development. In our journey of 11+ business years, we have understood that every client has unique requirements and our excellent relationship with clients reflects our work quality.</p></div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="container2">
+        <div><h1>Services We Can Provide</h1></div>
+        <div><span id="border1"></span><span id="border2"></span></div>
+        <div id="container2_row">
+            <div id="row">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3>Web Design & Development</h3>
+                <p>Bring life to your website with our latest designs and technology by highly skilled staff. They are capable of developing advanced features and 100% custom designs, which will convince people to trade with you and higher growth of your business.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div id="row">
+                <i class="fa-solid fa-inbox"></i>
+                <h3>Zoho</h3>
+                <p>Convert your website's visitors into customers with our Zoho services. We provide CRM (Drives more sales in less time), Creator (Custom app builder), Sales IQ, Desk, Forms, Contact Manager, Sales Inbox, Motivator, Bookings.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div id="row">
+                <i class="fa-solid fa-mobile-screen"></i>
+                <h3>Mobile Development</h3>
+                <p>We develop 100% custom mobile apps with the latest technology and tools. Our mobile development team provides IOS and Android-based services and tries to meet the needs of our customers no matter how complex they are.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div id="row">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h3>Search Engine Optimization</h3>
+                <p>SEO drives organic traffic to your website from Google and other search engines which help you to make more new customers and rank your website to the top of search results with our remarkable SEO strategies.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div id="row">
+                <i class="fa-solid fa-link"></i>
+                <h3>Link Building</h3>
+                <p>Link building is the main ranking factor that the search engines use to determine the authority of your website. We built high-quality links which are responsible for the faster ranking of your website.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div id="row">
+                <i class="fa-regular fa-keyboard"></i>
+                <h3>Content Development</h3>
+                <p>Content is an essential part of your website. It makes your website searchable and shows your reliability. As high-quality content and engaging presentation are necessary to develop trust in the readers.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+    </div>
+    <div id="container3">
+        <div id="container3_row">
+            <div><h1>Why Ciirs ?</h1></div>
+            <div><span id="border1"></span><span id="border2"></span></div>
+            <div><h4>One-stop Company for all web solutions with High Quality at reasonable prices.</h4></div>
+            <div id="row">
+                <span class="dot"><i class="fa-solid fa-thumbs-up"></i></span>
+                <h2>11+ Years of Experience</h2>
+                <p>In our experience of 11+ years, we have dealt with worldwide customers from different industries. In this long period, we have achieved several technical expertise and have developed methods to complete project of any size and complexity.</p>
+            </div>
+            <div id="row">
+                <span class="dot"><i class="fa-solid fa-users"></i></span>
+                <h2>Experienced Team</h2>
+                <p>Our team of highly experienced and skilled professionals prefers the best technology for the better growth of your business. They are capable of handling any project based on website development, web design or SEO to meet the expectations of the customers.</p>
+            </div>
+            <div id="row">
+                <span class="dot"><i class="fa-solid fa-globe"></i></span>
+                <h2>One-Stop for All Web Solutions</h2>
+                <p>Our company provide every web services like web design, Website development or digital marketing. You can depend on us for all your requirements as we have the required experience to do all that.</p>
+            </div>
+            <div id="row">
+                <span class="dot"><i class="fa-solid fa-hand-holding-dollar"></i></span>
+                <h2>Reasonable Pricing</h2>
+                <p>CIIR provides a clear price for result-oriented services. We aim at delivering high-quality work at very reasonable prices and ensure that our customers get high return on what they are investing.</p>
+            </div>
+            <div id="row">
+                <span class="dot"><i class="fa-sharp fa-solid fa-circle-check"></i></span>
+                <h2>Work Quality</h2>
+                <p>Our work quality reflects our long-time relationship with customers who are satisfied with our excellent work quality.</p>
+            </div>
+            <div id="row">
+                <span class="dot"><i class="fa-solid fa-child-reaching"></i></span>
+                <h2>Customer Satisfaction</h2>
+                <p>Customer satisfaction is at the priority in CIIR. We have delivered numerous projects with 99% customer satisfaction.</p>
+            </div>
+        </div>
+    </div>
+    <div id="container4">
+        <div><h1>Working Approach</h1></div>
+        <div><span id="border1"></span><span id="border2"></span></div>
+        <div id="container4_row">
+            <div id="working"><img src="working.png" alt=""></div>
+        </div>
+    </div>
+    <div id="container5">
+        <div id="container5_row">
+            <div class="circle">
+                <div><h1>11+</h1></div>
+                <div><p>Years Experience</p></div>
+            </div>
+            <div class="circle">
+                <h1>1000+</h1>
+                <p>Happy Clients Worldwide</p>
+            </div>
+            <div class="circle">
+                <h1>20+</h1>
+                <p>Countries Serves</p>
+            </div>
+            <div class="circle">
+                <h1>100+</h1>
+                <p>Repeat Clients with Recurring Business</p>
+            </div>
+        </div>
+    </div>
+    <div id="container6">
+        <div><h1>Pricing</h1></div>
+        <div class="border"><span id="border1"></span><span id="border2"></span></div>
+        <div><p>To provide you with high-quality work under desired budget, we tend to use flexible pricing policy.</p></div>
+        <div id="container6_row">
+            <div class="box" id="box1">
+                <div  id="layer1"><h1>Fixed Price Project</h1></div>
+                <div class="center_layer">
+                    <h3>Price starts from</h3>
+                    <h1 style="color:#8dca39">US $2500</h1>
+                    <h3>Per Project</h3>
+                </div>
+                <div class="lower_layer"><h3>No additional Charges!</h3></div>
+            </div>
+            <div class="box" id="box2">
+                <div id="layer2"><h1>Hourly Cost</h1></div>
+                <div class="center_layer">
+                    <h3>Price starts from</h3>
+                    <h1 style="color:#ec9917">US $20</h1>
+                    <h3>Per Hour</h3>
+                </div>
+                <div class="lower_layer"><h3>"Risk-free low-cost"</h3></div>
+            </div>
+            <div class="box" id="box3">
+                <div id="layer3"><h1>Dedicated Resources</h1></div>
+                <div class="center_layer">
+                    <h3>Price starts from</h3>
+                    <h1 style="color:#df1138">US $2500</h1>
+                    <h3>Per Month</h3>
+                </div>
+                <div class="lower_layer"><h3>170-190 hrs/month</h3></div>
+            </div>
+        </div>
+    </div>
+    <div id="container7">
+        <div id="container7_row">
+            <div class="box">
+                <span><img src="ciirslogopng.png" alt=""></span>
+                <h3 id="joinUs">Join Us</h3>
+                <a href="#" id="fb"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" id="gmail"><i class="fa-solid fa-envelope"></i></a>
+                <a href="#" id="in"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <div class="box">
+                <span><h3>Reach Us</h3></span>
+                <span><p>Plot No. #2323, First Floor,</p></span>
+                <span><p>Arya Samaj Rd, Rajpura,</p></span>
+                <span><p>Punjab 140401</p></span>
+            </div>
+            <div class="box" >
+                <span><h3 >Discuss With Us</h3></span>
+                <span><p>Have a project or a question?</p></span>
+                <span><p>We'd love to hear from you.</p></span>
+                <span id="contactlink"><h3><a href="#">Contact Us <i class="fa-solid fa-circle-chevron-right"></i></a></h3></span>
+            </div>
+        </div>
+        <div id="copyright">Copyright © 2022 CIIRS - Convert Ideas Into Reality. All Rights Reserved.</div>
+    </div>
+</body>
+</html>
