@@ -1,0 +1,553 @@
+
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    user-select: none;
+ }
+
+ body {
+     font-family: 'Noto Sans', sans-serif;
+     overflow-x: hidden;
+ }
+ #header {
+     display: flex;
+     background-color: white;
+     position: sticky;
+     top: 0;
+     border-bottom: 1px solid rgba(20, 53, 93, 0.2);
+ }
+ #show {
+     font-size: 30px;
+     position: absolute;
+     right: 30px;
+     top:20px;
+     display: none;
+ }
+ #show a {
+     text-decoration: none;
+     color:#f5821f;
+ }
+ #header #ciirs img {
+     width: 110px;
+     height: 70px;
+     margin: 6px 0 0 8vw;
+ }
+ #topnav {
+     overflow: hidden;
+     display: flex;
+     margin: 8px 0 10px 15vw;
+     align-items: center;
+ }
+ #topnav a{
+     text-decoration: none;
+     color: #14355d  ;
+     margin: 8px 1vw;
+     padding-bottom: 8px;
+     letter-spacing: 0.5px;
+     font-size: 1.2vw;
+     text-align: center;
+     transition: 0.4s;
+     outline: none;
+     border-bottom: 4px solid white;
+     font-weight: bold;
+     white-space:nowrap;
+ }
+ #topnav a.active2 {
+     color: white;
+     background-color: #f5821f;
+     padding:12px 30px;
+     border-radius: 8px;
+     margin-left: 20px;
+ }
+ #topnav a.active1 {
+     border-bottom: 4px solid #f5821f;
+ } 
+
+ #topnav a:hover:not(.active2) {
+     color: #f5821f;
+     border-bottom: 4px solid #f5821f;
+ }
+
+ /* img part after header */
+ #background {
+     letter-spacing:1px;
+ }
+ #imgbody div{
+     display: flex;
+     justify-content: center;
+ }
+ #heading h3 {
+     margin-top: 30px;
+     font-size: 35px;
+     color:white;
+     margin-bottom: -10px;
+ }
+ #imgbody h1 {
+     font-size: 70px;
+     color:#ff902f
+ }
+ #imgbody h5 {
+     font-size: 18px;
+     margin: 0 100px; 
+     text-align: center;
+     color: white;
+ }
+ #btn a {
+     font-size: 20px;
+     text-decoration: none;
+     color: white;
+     background-color: #f5821f;
+     padding:12px 30px;
+     border-radius: 5px;
+     margin: 40px 0;
+ }
+ #slider {
+    display: flex;
+    justify-content: center;
+ }
+ #slider img {
+     position: absolute;
+     z-index: -1;
+     width: 100%;
+     height: 450px;
+     object-fit: cover;
+     object-position: center;
+     filter: brightness(40%);
+     float: left;
+ }
+ @keyframes out {
+    0% {
+        transform: translateX(0);
+      }
+    
+      100% {
+        transform: translateX(-100%);
+      }
+ }
+ @keyframes in {
+    0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+ }
+ @keyframes prevIn {
+    0% {
+        transform: translateX(-100%);
+      }
+    
+      100% {
+        transform: translateX(0);
+      }
+ }
+ @keyframes prevOut {
+    0% {
+        transform: translateX(0);
+      }
+    
+      100% {
+        transform: translateX(100%);
+      }
+ }
+ #slider img:not(.active) {
+    display: none;
+ }
+#sliderBtn button{
+    padding: 10px 20px;
+    font-size: 17px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.664);
+    transition: 0.3s;
+}
+#sliderBtn button:hover {scale: 1.4;color: white;}
+#rightBtn {position: absolute;right:2%; top:30%;}
+#leftBtn {position: absolute;left:2%; top:30%;}
+
+ /* container 1 part about company */
+ #container1 {
+     background-color: #14355d;
+     color: white;
+     text-align: justify;
+ }
+ #container1 h1 {color:white; margin-bottom:-20px}
+ #container1 p {text-align: justify;font-size: 20px;}
+ #container1_col{
+     padding: 40px 80px;
+ }
+ #col div {
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     margin: 20px;
+ }
+ #col h1:not(.aboutUs) {
+     margin-top:20px;
+ }
+ #border1 {
+     padding:0 28px;
+     border-top: 4px solid #f5821f;
+ }
+ #border2 {
+     padding:0 5px;
+     border-top: 4px solid rgba(212, 185, 185, 0.712);
+     margin-left:6px;
+ }
+
+ /* container 2 part about services */
+ #container2 {
+     background-color:white; 
+     padding: 60px 0;             
+     color: #14355d;
+     letter-spacing: 0.5px;
+     font-size: 17px;
+ }
+ #container2 h1, h3 {text-align: center;}
+ #container2 h1 {margin-bottom: 20px;}
+ #container2 div {
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+ }
+ #container2_row {margin-top: 40px;}
+ #container2_row #row {
+     width: 29%;
+     padding: 30px 15px;
+     margin: 25px;
+     background-color: #f9f9f9;
+     box-shadow: 3px 2px 10px rgb(206, 198, 198);
+     border-radius: 2px 70px;
+     transition: 0.2s;
+ }
+ #row h3 {padding: 18px;}
+ #container2_row #row p {
+     color:rgba(20, 53, 93, .8);
+     text-align:justify;
+     
+ }
+ #row a {
+     color:#f5821f;
+     text-decoration: none;
+     font-weight: bold;
+     padding: 25px 0 10px 0px;
+ }
+ #container2_row #row:hover {
+     box-shadow: 4.5px 2.5px 10px rgb(179, 170, 170);
+ }
+ #container2_row #row i {
+     font-size: 50px;
+     display: block;
+     color:#f5821f;
+     width:100%;
+     text-align: center;
+ }
+
+ /* Container 3 why ciirs ? */
+ #container3 {
+     background-color: rgba(0, 0, 0, 0.74);
+     background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0.3));
+     height: 100%;
+     color:white;
+     width: 100%; 
+     padding-bottom:50px ;
+ }
+ #container3_row {margin: 0px 6vw 0; padding-top: 40px}
+ #container3_row div{
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+     text-align: left;
+ }
+ #container3_row h1, h2 {color:#f5821f;margin:1.5vw;}
+ #container3_row #row {
+     width:45%;
+     display: inline-block;
+     margin: 0 0 0 3vw; 
+     transition: 0.2s;
+ }
+ .dot {
+     border: 3px solid rgb(255, 255, 255);
+     /* display: inline-block; */
+     float: left;
+     width: 80px;
+     height: 80px;
+     border-radius: 50%;
+     margin:10px 20px 25% 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+ #container3_row h4 {
+     margin: 30px 0 40px 0;
+     font-size: 16px;
+     text-align: center;
+ }
+ #container3_row p {font-size: 18px;text-align: justify;}
+ #container3_row #row i {
+     font-size: 35px;
+     text-align: center;
+ }
+ #container3_row #row:hover {
+     scale: 1.05;
+ }
+ #container3_row #row:hover i {color: #f5821f;}
+ #container3_row #row:hover .dot {
+     background-color: white;
+ }
+ /* conatiner 4 working approach */
+ #container4 { background-color: rgba(243, 238, 238, 0.514)}
+ #container4 div {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color:#14355d
+ }
+ #container4 h1 {margin:40px 0 20px 0;}
+ #container4_row img {
+     margin-top: 20px;
+     height: 120vh;
+     width: 100%;
+ }
+
+ /* conatiner 5 company experience*/
+ #container5 {
+     background-image:linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url("pexels3.jpg");
+     width:100%;
+     height: 100%;
+     background-repeat: no-repeat;
+     background-attachment: absolute;
+     background-size:cover;
+     background-position: right center;
+ }
+ #container5_row {
+     display: flex;
+     justify-content: center;
+     padding: 30px 6vw 30px 6vw;
+ }
+ #container5_row div {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+ }
+ #container5 .circle {
+     border: 2px solid #ddd;
+     border-radius: 50%;
+     width: 17vw;
+     height: 30vh;
+     margin: 40px 20px;
+     text-align: center;
+ }
+ #container5_row h1 {color:#f5821f;}
+ #container5_row p {
+     color:white;
+     padding: 15px;
+     margin-top: -15px;
+ }
+
+ /* container 6 Prices */
+ #container6 {margin: 30px 0 60px 0}
+ #container6_row, h1, p{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     gap: 40px;
+ }
+ #container6 p {font-size: 19px;}
+ #container6 .border {
+     display: flex;
+     justify-content: center;
+ }
+ h1 {color:#14355d; padding:10px;}
+ #container6 p {margin:30px 60px; text-align: center;}
+ #layer1 h1, #layer2 h1, #layer3 h1 {color:white;}
+  #layer1, #layer2, #layer3{
+     border-radius: 10px 10px 0px 0;
+     padding: 20px 0;
+ }
+ #layer1 {
+     background-color:#8dca39;
+     padding: 20px 40px;
+ }
+ #layer2 {
+     background-color: #ec9917;
+     padding: 20px 70px;
+ }
+ #layer3 {background-color: #df1138;}
+ .lower_layer {
+     color:white;
+     background-color: #505050;
+     padding: 15px 0 15px 0;
+     border-radius: 0 0 10px 10px;
+ }
+ .center_layer {
+     padding:20px 0 30px 0;
+     background-color: #f7f7f7;
+     color:#337ab7;
+     font-size: 20px;
+ }
+ /* Container 7 Footer */
+ #container7 {
+     background-color: #0a0a0a;
+     color:white;
+     font-size: 19px;
+ }
+ #container7 h3 {color:#f5821f;}
+ #container7_row {
+     display: flex;
+     text-align: left;
+     white-space: nowrap;
+ }
+ #container7_row .box {
+     margin:40px 7vw 40px 7vw;
+ }
+ .box img {width:120px;}
+ .box span {display: flex; padding: 1vw}
+ .box #joinUs {display: flex; margin:0 0 20px 5px;}
+ #fb, #gmail, #in {
+     color: white;
+     background-color:#3b5998;
+     border-radius: 4px;
+     margin:5px;
+ }
+ #fb {padding:5px 12px;}
+ #gmail {background-color: #c71610;padding:5px 9.5px;}
+ #in {background-color: #0072b1 ;padding:5px 11px;}
+ #contactlink a {
+     text-decoration: none;
+     color:#f5821f;
+ }
+ #copyright {
+     text-align: center;
+     border-top: 0.5px solid #8a868667;
+     padding: 5px;
+     color: rgba(175, 166, 166, 0.541);
+     font-size: 15px;
+ }
+ 
+ /* Responsive */
+ @media only screen and (max-width: 500px) {
+     #container3 #container3_row #row {
+         margin: 0 20px 12px 0;
+     }
+     #container3 {padding: 0}
+ }
+ @media only screen and (max-width: 700px) {
+     #container3_row {
+         display: grid;
+         grid-template-columns: auto;
+     }
+     #container3_row #row {
+         width: 100%;
+         margin: 0 20px -25px 0;
+         font-size: 14px;
+     }
+     #container3_row #row p {font-size: 14px;}
+     #imgbody h1 {font-size: 40px;}
+     #imgbody h3 {font-size: 22px;}
+     #imgbody h5 {font-size: 14px;}
+     #btn a {font-size:16px}
+     #container1 p {font-size: 17px;}
+     #container1 h1 {font-size: 27px;}
+     #container2 #container2_row #row{
+         width: 100%;
+     }
+ }
+ @media only screen and (max-width: 800px) {
+     #container6_row #box1, #box2, #box3 {
+         grid-column-start: 1;
+         grid-column-end: 3;
+         font-size: 3vw;
+     }
+     #container6 #container6_row .center_layer {font-size: 4.3vw;}
+     #container5 #container5_row .circle {
+         width: 33vw;
+         height: 33vh;
+     }
+     #container2 #container2_row #row{
+         width: 80%;
+     }
+     #container1_col{
+         padding: 40px 2.5vw;
+     }
+ }
+ @media only screen and (max-width: 940px) {
+     #container7_row {
+         display: flex;
+         flex-direction: column;
+     }
+     #container6_row {
+         display:grid;
+         grid-template-columns: auto auto;
+     }
+     #container6_row #box3{
+         grid-column-start: 1;
+         grid-column-end: 3;
+     }
+     #container5_row {
+         display: grid;
+         grid-template-columns: auto auto;
+     }
+     #container5_row .circle {
+         width: 30vw;
+         height: 33vh;
+     }
+     #container4_row img {
+         height: 90vh;
+     }
+     /* #background {
+         background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("wallpaperflare.jpg");
+     } */
+     #imgbody h5 {margin: 0 50px 0;}
+ }
+ @media only screen and (max-width: 1030px) {
+     #header #topnav {
+         display: none;
+         position: absolute;
+         top: 60px;
+         right:0;
+     }
+     #topnav a:not(.active2) {
+         text-align: left;
+         background-color: #14355d;
+         padding:12px 90px 12px 20px;
+         color: rgba(255,255,255);
+         font-size: 20px;
+         margin:0;
+     }
+     #header #topnav a.active2 {
+         color: rgba(255,255,255);
+         font-size: 20px;
+         border: none;
+     }
+     #show {display: block;}
+ }
+ @media only screen and (max-width: 1070px) {
+     #topnav {
+         overflow: hidden;
+         display: flex;
+         margin: 8px 0 10px 90px;
+         align-items: center;
+     }
+ }
+ @media only screen and (max-width: 1150px) {
+     #container6_row {font-size: 10.5px;}
+     #container6_row .center_layer {font-size: 17.5px;}
+     #container6_row #layer3 {padding: 20px 30px}
+     #header {position: relative;}
+ }
+ @media only screen and (max-width: 1180px) {
+     #header {position: relative;}
+     #container2_row #row{
+         width: 43%;
+     }
+     #imgbody div{
+         display: flex;
+         justify-content: center;
+     }
+     #topnav a {font-size: 14px ;}
+ }
