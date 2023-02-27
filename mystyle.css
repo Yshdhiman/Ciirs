@@ -120,37 +120,57 @@
     0% {
         transform: translateX(0);
       }
-    
-      100% {
+    10% {
+        transform: translateX(0%);
+    }
+    90% {
         transform: translateX(-100%);
       }
+    100% {
+        transform: translateX(-100%);
+    }
  }
  @keyframes in {
     0% {
     transform: translateX(100%);
-  }
-
-  100% {
+    }
+    10% {
+    transform: translateX(100%);
+    }
+    90% {
     transform: translateX(0);
-  }
+    }
+    100% {
+        transform: translateX(0);
+    }
  }
  @keyframes prevIn {
     0% {
         transform: translateX(-100%);
-      }
-    
-      100% {
+    }
+    10% {
+        transform: translateX(-100%);
+    }
+    90% {
         transform: translateX(0);
-      }
+    }
+    100% {
+        transform: translateX(0);
+    }
  }
  @keyframes prevOut {
     0% {
         transform: translateX(0);
       }
-    
-      100% {
+    10% {
+        transform: translateX(0%);
+    }
+    90% {
         transform: translateX(100%);
       }
+    100% {
+        transform: translateX(100%);
+    }
  }
  #slider img:not(.active) {
     display: none;
